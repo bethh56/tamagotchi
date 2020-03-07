@@ -1,5 +1,6 @@
-import healthData from '../helpers/data/healthData';
-import utils from '../helpers/utils';
+import healthData from '../../helpers/data/healthData';
+import utils from '../../helpers/utils';
+import './play.scss';
 
 const mostFun = () => {
   const lotsOfFun = healthData.getHealthData();
@@ -20,7 +21,7 @@ const play = () => {
   let domString = '';
   playTime.forEach((healthScores) => {
     domString += '<h1>PLAY</h1>';
-    domString += `Happiness Score: ${healthScores.play}`;
+    domString += `<h2>Happiness Score: ${healthScores.play}</h2>`;
     domString += '<button id="most-fun-activity">SUPER FUN ACTIVITY</button>';
     domString += '<button id="fun-activity">FUN ACTIVITY</button>';
   });

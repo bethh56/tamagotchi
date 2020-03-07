@@ -1,8 +1,8 @@
 import '../styles/main.scss';
-import fullnessInfo from './components/eat';
-import playInfo from './components/play';
-import fightInfo from './components/fight';
-import sleepInfo from './components/sleep';
+import fullnessInfo from './components/eat/eat';
+import playInfo from './components/play/play';
+import fightInfo from './components/fight/fight';
+import sleepInfo from './components/sleep/sleep';
 
 const init = () => {
   fullnessInfo.hunger();

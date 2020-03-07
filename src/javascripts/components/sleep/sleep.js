@@ -1,5 +1,6 @@
-import healthData from '../helpers/data/healthData';
-import utils from '../helpers/utils';
+import healthData from '../../helpers/data/healthData';
+import utils from '../../helpers/utils';
+import './sleep.scss';
 
 const napping = () => {
   const afternoonNap = healthData.getHealthData();
@@ -20,7 +21,7 @@ const sleep = () => {
   let domString = '';
   napTime.forEach((healthScores) => {
     domString += '<h1>SLEEP</h1>';
-    domString += `Energy Score: ${healthScores.sleep}`;
+    domString += `<h2>Energy Score: ${healthScores.sleep}</h2>`;
     domString += '<button id="nap-time">NAP</button>';
     domString += '<button id="sleep-time">SLEEP</button>';
   });

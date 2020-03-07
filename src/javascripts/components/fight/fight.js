@@ -1,5 +1,6 @@
-import healthData from '../helpers/data/healthData';
-import utils from '../helpers/utils';
+import healthData from '../../helpers/data/healthData';
+import utils from '../../helpers/utils';
+import './fight.scss';
 
 const runAway = () => {
   const run = healthData.getHealthData();
@@ -20,7 +21,7 @@ const battle = () => {
   let domString = '';
   fight.forEach((healthScores) => {
     domString += '<h1>FIGHT</h1>';
-    domString += `Battle Score: ${healthScores.fight}`;
+    domString += `<h2>Battle Score: ${healthScores.fight}</h2>`;
     domString += '<button id="running-away">RUN AWAY</button>';
     domString += '<button id="commit-violence">FIGHT!</button>';
   });

@@ -1,21 +1,21 @@
-import healthData from '../helpers/data/healthData';
-import utils from '../helpers/utils';
+import healthData from '../../helpers/data/healthData';
+import utils from '../../helpers/utils';
+import './eat.scss';
 
 const healthEvents = () => {
   const healthyEats = healthData.getHealthData();
-  healthyEats.forEach((healthScores) => {
-    const healthy = `${healthScores.fullness}`;
-    if (healthy < 101) {
-      console.error('GOOD FOODS', $(healthScores.fullness));
+  healthyEats.forEach((healthIncrease) => {
+    if (healthIncrease.fullness < 101) {
+      console.error('GOOD FOODS', healthIncrease.fullness + 1);
     }
   });
 };
 
 const unhealthyEvents = () => {
   const unhealthyEats = healthData.getHealthData();
-  unhealthyEats.forEach((healthScores) => {
-    if (`${healthScores.fullness}` < 101) {
-      console.error('BAD FOODS', $(healthScores.fullness));
+  unhealthyEats.forEach((healthDecrease) => {
+    if (healthDecrease.fullness < 101) {
+      console.error('BAD FOODS', healthDecrease.fullness - 1);
     }
   });
 };
