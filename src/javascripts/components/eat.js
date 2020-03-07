@@ -4,14 +4,19 @@ import utils from '../helpers/utils';
 const healthEvents = () => {
   const healthyEats = healthData.getHealthData();
   healthyEats.forEach((healthScores) => {
-    console.error('HEALTHY FOODS', $(healthScores.fullness));
+    const healthy = `${healthScores.fullness}`;
+    if (healthy < 101) {
+      console.error('GOOD FOODS', $(healthScores.fullness));
+    }
   });
 };
 
 const unhealthyEvents = () => {
   const unhealthyEats = healthData.getHealthData();
   unhealthyEats.forEach((healthScores) => {
-    console.error('BAD FOODS', $(healthScores.fullness));
+    if (`${healthScores.fullness}` < 101) {
+      console.error('BAD FOODS', $(healthScores.fullness));
+    }
   });
 };
 
