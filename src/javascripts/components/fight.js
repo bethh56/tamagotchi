@@ -1,6 +1,20 @@
 import healthData from '../helpers/data/healthData';
 import utils from '../helpers/utils';
 
+const runAway = () => {
+  const run = healthData.getHealthData();
+  run.forEach((healthScores) => {
+    console.error('RUN AWAY', $(healthScores.fight));
+  });
+};
+
+const commitViolence = () => {
+  const violence = healthData.getHealthData();
+  violence.forEach((healthScores) => {
+    console.error('FIGHT', $(healthScores.fight));
+  });
+};
+
 const battle = () => {
   const fight = healthData.getHealthData();
   let domString = '';
@@ -11,6 +25,8 @@ const battle = () => {
     domString += '<button id="commit-violence">FIGHT!</button>';
   });
   utils.printToDom('fight', domString);
+  $('#running-away').click(runAway);
+  $('#commit-violence').click(commitViolence);
 };
 
 export default { battle };

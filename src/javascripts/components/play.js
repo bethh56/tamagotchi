@@ -1,6 +1,20 @@
 import healthData from '../helpers/data/healthData';
 import utils from '../helpers/utils';
 
+const mostFun = () => {
+  const lotsOfFun = healthData.getHealthData();
+  lotsOfFun.forEach((healthScores) => {
+    console.error('THE MOST FUN', $(healthScores.play));
+  });
+};
+
+const funActivity = () => {
+  const someFun = healthData.getHealthData();
+  someFun.forEach((healthScores) => {
+    console.error('FUN TIMES', $(healthScores.play));
+  });
+};
+
 const play = () => {
   const playTime = healthData.getHealthData();
   let domString = '';
@@ -11,6 +25,8 @@ const play = () => {
     domString += '<button id="fun-activity">FUN ACTIVITY</button>';
   });
   utils.printToDom('play', domString);
+  $('#most-fun-activity').click(mostFun);
+  $('#fun-activity').click(funActivity);
 };
 
 export default { play };

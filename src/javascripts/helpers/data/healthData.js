@@ -7,8 +7,6 @@ const healthScores = [
   },
 ];
 
-const getHealthData = () => {
-  return healthScores;
-};
+const getHealthData = () => healthScores;
 
 export default { getHealthData };
