@@ -4,11 +4,9 @@ import './eat.scss';
 
 const healthEvents = () => {
   const healthyEats = healthData.getHealthData();
-  healthyEats.forEach((healthIncrease) => {
-    if (healthIncrease.fullness < 101) {
-      console.error('GOOD FOODS', healthIncrease.fullness + 1);
-    }
-  });
+  if (healthyEats.fullness < 101) {
+    healthyEats.fullness += 1;
+  }
 };
 
 const unhealthyEvents = () => {
