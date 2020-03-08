@@ -3,6 +3,13 @@
 #eat {
   background-color: $gold;
 }
+
+h1 {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 300%;
+  margin: 0;
+}
  
 .quad-eat {
   position: absolute;
@@ -24,5 +31,6 @@ button {
   padding-bottom: 13px;
   margin: 5px;
   width: 175px;
+  font-family: monospace;
 }
 
