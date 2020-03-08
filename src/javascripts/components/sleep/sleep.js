@@ -4,27 +4,21 @@ import './sleep.scss';
 
 const napping = () => {
   const afternoonNap = healthData.getHealthData();
-  afternoonNap.forEach((healthScores) => {
-    console.error('NAP TIME', $(healthScores.sleep));
-  });
+  console.error('NAP TIME', afternoonNap.sleep);
 };
 
 const sleeping = () => {
   const goodNight = healthData.getHealthData();
-  goodNight.forEach((healthScores) => {
-    console.error('GOOD NIGHT', $(healthScores.sleep));
-  });
+  console.error('GOOD NIGHT', goodNight.sleep);
 };
 
 const sleep = () => {
   const napTime = healthData.getHealthData();
   let domString = '';
-  napTime.forEach((healthScores) => {
-    domString += '<h1>SLEEP</h1>';
-    domString += `<h2>Energy Score: ${healthScores.sleep}</h2>`;
-    domString += '<button id="nap-time">NAP</button>';
-    domString += '<button id="sleep-time">SLEEP</button>';
-  });
+  domString += '<h1>SLEEP</h1>';
+  domString += `<h2>Energy Score: ${napTime.sleep}</h2>`;
+  domString += '<button id="nap-time">NAP</button>';
+  domString += '<button id="sleep-time">SLEEP</button>';
   utils.printToDom('sleep', domString);
   $('#nap-time').click(napping);
   $('#sleep-time').click(sleeping);
