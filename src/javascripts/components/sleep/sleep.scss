@@ -3,3 +3,15 @@
 #sleep {
   background-color: $blue;
 }
+
+.quad-sleep {
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  height: 48%;
+  width: 49%;
+  #sleep {
+    margin-top: 100px;
+    text-align: center;
+  }
+}

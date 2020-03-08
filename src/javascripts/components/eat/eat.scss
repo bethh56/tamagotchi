@@ -3,3 +3,26 @@
 #eat {
   background-color: $gold;
 }
+ 
+.quad-eat {
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  height: 48%;
+  width: 49%;
+  #eat {
+    margin-top: 100px;
+    text-align: center;
+  }
+}
+
+button {
+  background-color: $button-color;
+  color: $button-text;
+  border: white solid 0.5px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin: 5px;
+  width: 175px;
+}
+
