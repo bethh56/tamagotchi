@@ -11,12 +11,19 @@ const battle = () => {
   domString += '<button id="commit-violence">FIGHT!</button>';
   utils.printToDom('fight', domString);
   const runAway = () => {
-    // +1
-    console.error('RUN AWAY', fightTime.fight);
+    if (fightTime.fight <= 99) {
+      fightTime.fight += 1;
+    }
+    battle();
   };
   const commitViolence = () => {
-    // -10
-    console.error('FIGHT', fightTime.fight);
+    if (fightTime.fight <= 100) {
+      fightTime.fight -= 10;
+      // counting below 0 figure out why
+    } else if (fightTime.fight >= -1) {
+      fightTime.fight = 0;
+    }
+    battle();
   };
   $('#running-away').click(runAway);
   $('#commit-violence').click(commitViolence);
