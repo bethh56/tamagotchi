@@ -2,16 +2,6 @@ import healthData from '../../helpers/data/healthData';
 import utils from '../../helpers/utils';
 import './play.scss';
 
-const mostFun = () => {
-  const lotsOfFun = healthData.getHealthData();
-  console.error('THE MOST FUN', lotsOfFun.play);
-};
-
-const funActivity = () => {
-  const someFun = healthData.getHealthData();
-  console.error('FUN TIMES', someFun.play);
-};
-
 const play = () => {
   const playTime = healthData.getHealthData();
   let domString = '';
@@ -20,6 +10,22 @@ const play = () => {
   domString += '<button id="most-fun-activity">SUPER FUN ACTIVITY</button>';
   domString += '<button id="fun-activity">FUN ACTIVITY</button>';
   utils.printToDom('play', domString);
+  const mostFun = () => {
+    if (playTime.play <= 50) {
+      playTime.play += 50;
+    } else {
+      playTime.play = 100;
+    }
+    play();
+  };
+  const funActivity = () => {
+    if (playTime.play <= 99) {
+      playTime.play += 2;
+    } else {
+      playTime.play = 100;
+    }
+    play();
+  };
   $('#most-fun-activity').click(mostFun);
   $('#fun-activity').click(funActivity);
 };

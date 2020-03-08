@@ -2,16 +2,6 @@ import healthData from '../../helpers/data/healthData';
 import utils from '../../helpers/utils';
 import './sleep.scss';
 
-const napping = () => {
-  const afternoonNap = healthData.getHealthData();
-  console.error('NAP TIME', afternoonNap.sleep);
-};
-
-const sleeping = () => {
-  const goodNight = healthData.getHealthData();
-  console.error('GOOD NIGHT', goodNight.sleep);
-};
-
 const sleep = () => {
   const napTime = healthData.getHealthData();
   let domString = '';
@@ -20,6 +10,22 @@ const sleep = () => {
   domString += '<button id="nap-time">NAP</button>';
   domString += '<button id="sleep-time">SLEEP</button>';
   utils.printToDom('sleep', domString);
+  const napping = () => {
+    if (napTime.sleep <= 50) {
+      napTime.sleep += 40;
+    } else {
+      napTime.sleep = 100;
+    }
+    sleep();
+  };
+  const sleeping = () => {
+    if (napTime.sleep <= 50) {
+      napTime.sleep += 50;
+    } else {
+      napTime.sleep = 100;
+    }
+    sleep();
+  };
   $('#nap-time').click(napping);
   $('#sleep-time').click(sleeping);
 };
