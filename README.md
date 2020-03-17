@@ -11,5 +11,5 @@ On page load, user sees 4 quadrants.  Each quadrant is labeled either 'play', 's
 ## How To Run
 1. Clone down this repo
 1. Make sure you have http-server installed via npm. If not, get it here
-1. On your command line run hs -p 8081
-1. In your browser go to http://localhost:8081
+1. On your command line run npm start
+
