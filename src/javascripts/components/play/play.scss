@@ -3,3 +3,15 @@
 #play {
   background-color: $purple;
 }
+
+.quad-play {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  height: 48%;
+  width: 49%;
+  #play {
+    margin-top: 100px;
+    text-align: center;
+  }
+}

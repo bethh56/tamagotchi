@@ -5,10 +5,12 @@ import './eat.scss';
 const hunger = () => {
   const full = healthData.getHealthData();
   let domString = '';
+  domString += '<div id="eat">';
   domString += '<h1>EAT</h1>';
   domString += `<h2>Fullness Score : ${full.fullness} </h2>`;
   domString += '<button id="healthy-food">HEALTHY FOOD</button>';
   domString += '<button id="unhealthy-food">UNHEALTHY FOOD</button>';
+  domString += '</div>';
   utils.printToDom('eat', domString);
   const healthEvents = () => {
     if (full.fullness >= 90) {

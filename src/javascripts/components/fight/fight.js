@@ -5,10 +5,12 @@ import './fight.scss';
 const battle = () => {
   const fightTime = healthData.getHealthData();
   let domString = '';
+  domString += '<div id="fight">';
   domString += '<h1>FIGHT</h1>';
   domString += `<h2>Battle Score: ${fightTime.fight}</h2>`;
   domString += '<button id="running-away">RUN AWAY</button>';
   domString += '<button id="commit-violence">FIGHT!</button>';
+  domString += '</div>';
   utils.printToDom('fight', domString);
   const runAway = () => {
     if (fightTime.fight <= 99) {
